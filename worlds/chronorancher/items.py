@@ -92,7 +92,7 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Spike Bestiary": ItemClassification.filler,
     "Blob Bestiary": ItemClassification.filler,
     "Brick Bestiary": ItemClassification.filler,
-    "Generic Filler": ItemClassification.filler,
+    "Congratulatory Critter": ItemClassification.filler,
     "Undo Trap": ItemClassification.trap,
     "Inverted Controls Trap": ItemClassification.trap
 }

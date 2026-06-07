@@ -56,7 +56,7 @@ def set_all_entrance_rules(world : ChronoRancherWorld) :
 
 def set_all_location_rules(world : ChronoRancherWorld) -> None:
     #rules need to be set if there are locked levels
-    if world.options.locked_levels == 1 :
+    if world.options.lock_levels == 1 :
         for i in range(1,31) :
             #ignores all tutorial levels
             if not i in locations.TUTORIAL_LEVELS :
@@ -69,7 +69,7 @@ def set_all_location_rules(world : ChronoRancherWorld) -> None:
                 event_level = world.get_location(event_level_name)
                 world.set_rule(event_level, unlock)
     #currently locks all key levels
-    elif world.options.locked_levels >= 2 :
+    elif world.options.lock_levels >= 2 :
         for i in range(1,31) :
             if i in locations.KEY_LEVELS :
                 location_name = "Level " + str(i) + " Complete"
@@ -82,10 +82,11 @@ def set_all_location_rules(world : ChronoRancherWorld) -> None:
                 world.set_rule(event_level, unlock)
 
 def set_completion_condition(world : ChronoRancherWorld) -> None:
-    if world.options.victory_condtion == 0 :
+    if world.options.victory_condition == 0 :
         percent_levels_needed = world.options.goal_level_percent
         levels_needed = math.floor(percent_levels_needed * 30 / 100)
-        world.set_completion_condition(Has("Level Completed", count=levels_needed))
+        enough_levels_completed = Has("Level Completed", count=levels_needed)
+        world.set_completion_rule(enough_levels_completed)
     else :
         #don't yet have a way to implement the other victory condition
         pass

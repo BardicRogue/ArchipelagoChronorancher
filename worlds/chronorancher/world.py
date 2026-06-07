@@ -41,5 +41,5 @@ class ChronoRancherWorld(World):
 
     def fill_slot_data(self) -> Mapping[str, Any]:
         return self.options.as_dict(
-            "victory_conditon", "goal_level_percent", "key_levels_to_beat","num_key_levels","lock_levels","checks_critter_sanity"
+            "victory_condition", "goal_level_percent", "key_levels_to_beat","num_key_levels","lock_levels","checks_critter_sanity"
         )
