@@ -87,68 +87,46 @@ def create_regular_locations(world: ChronoRancherWorld) -> None:
         ["Level 1 Complete"]
     )
     menu.add_locations(menu_locations, ChronoRancherLocation)
-    brick_levels.add_event("Completed Level 1", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
 
     fluff_locations = get_location_names_with_ids(
         ["Level 2 Complete", "Level 3 Complete", "Level 4 Complete", "Level 6 Complete","Level 8 Complete", "Level 13 Complete"]
     )
     fluff_levels.add_locations(fluff_locations, ChronoRancherLocation)
-    fluff_levels.add_event("Completed Level 2", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
-    fluff_levels.add_event("Completed Level 3", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
-    fluff_levels.add_event("Completed Level 4", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
-    fluff_levels.add_event("Completed Level 6", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
-    fluff_levels.add_event("Completed Level 8", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
-    fluff_levels.add_event("Completed Level 13", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
 
     spike_locations = get_location_names_with_ids(
         ["Level 5 Complete", "Level 7 Complete", "Level 11 Complete", "Level 14 Complete"]
     )
     spike_levels.add_locations(spike_locations, ChronoRancherLocation)
-    spike_levels.add_event("Completed Level 5", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
-    spike_levels.add_event("Completed Level 7", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
-    spike_levels.add_event("Completed Level 11", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
-    spike_levels.add_event("Completed Level 14", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
 
     blob_locations = get_location_names_with_ids(
         ["Level 15 Complete", "Level 16 Complete"]
     )
     blob_levels.add_locations(blob_locations, ChronoRancherLocation)
-    blob_levels.add_event("Completed Level 15", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
-    blob_levels.add_event("Completed Level 16", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
 
     brick_locations = get_location_names_with_ids(
         ["Level 21 Complete", "Level 23 Complete"]
     )
     brick_levels.add_locations(brick_locations, ChronoRancherLocation)
-    brick_levels.add_event("Completed Level 21", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
-    brick_levels.add_event("Completed Level 23", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
 
     fluff_spike_locations = get_location_names_with_ids(
         ["Level 9 Complete", "Level 10 Complete", "Level 12 Complete"]
     )
     fluff_spike_levels.add_locations(fluff_spike_locations, ChronoRancherLocation)
-    fluff_spike_levels.add_event("Completed Level 9", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
-    fluff_spike_levels.add_event("Completed Level 10", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
-    fluff_spike_levels.add_event("Completed Level 12", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
 
     fluff_blob_locations = get_location_names_with_ids(
         ["Level 17 Complete", "Level 19 Complete"]
     )
     fluff_blob_levels.add_locations(fluff_blob_locations, ChronoRancherLocation)
-    fluff_blob_levels.add_event("Completed Level 17", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
-    fluff_blob_levels.add_event("Completed Level 19", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
 
     fluff_brick_locations = get_location_names_with_ids(
         ["Level 24 Complete"]
     )
     fluff_brick_levels.add_locations(fluff_brick_locations, ChronoRancherLocation)
-    fluff_brick_levels.add_event("Completed Level 24", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
 
     spike_blob_locations = get_location_names_with_ids(
         ["Level 18 Complete"]
     )
     spike_blob_levels.add_locations(spike_blob_locations, ChronoRancherLocation)
-    spike_blob_levels.add_event("Completed Level 18", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
 
     spike_brick_locations = get_location_names_with_ids(
         []
@@ -159,21 +137,16 @@ def create_regular_locations(world: ChronoRancherWorld) -> None:
         ["Level 22 Complete", "Level 25 Complete", "Level 28 Complete"]
     )
     blob_brick_levels.add_locations(blob_brick_locations, ChronoRancherLocation)
-    blob_brick_levels.add_event("Completed Level 22", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
-    blob_brick_levels.add_event("Completed Level 25", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
-    blob_brick_levels.add_event("Completed Level 28", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
 
     fluff_spike_blob_locations = get_location_names_with_ids(
         ["Level 20 Complete"]
     )
     fluff_spike_blob_levels.add_locations(fluff_spike_blob_locations, ChronoRancherLocation)
-    fluff_spike_blob_levels.add_event("Completed Level 20", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
 
     fluff_spike_brick_locations = get_location_names_with_ids(
         ["Level 27 Complete"]
     )
     fluff_spike_brick_levels.add_locations(fluff_spike_brick_locations, ChronoRancherLocation)
-    fluff_spike_brick_levels.add_event("Completed Level 27", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
 
     fluff_blob_brick_locations = get_location_names_with_ids(
         []
@@ -189,9 +162,6 @@ def create_regular_locations(world: ChronoRancherWorld) -> None:
         ["Level 26 Complete", "Level 29 Complete", "Level 30 Complete"]
     )
     fluff_spike_blob_brick_levels.add_locations(fluff_spike_blob_brick_locations, ChronoRancherLocation)
-    fluff_spike_blob_brick_levels.add_event("Completed Level 26", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
-    fluff_spike_blob_brick_levels.add_event("Completed Level 29", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
-    fluff_spike_blob_brick_levels.add_event("Completed Level 30", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
 
     #Add code for if bestiary is enabled
     if world.options.checks_critter_sanity :
@@ -221,4 +191,85 @@ def create_regular_locations(world: ChronoRancherWorld) -> None:
         brick_levels.add_locations(brick_bestiary, ChronoRancherLocation)
 
 def create_events(world: ChronoRancherWorld) -> None :
-    pass
+    menu = world.get_region("Menu")
+    fluff_levels = world.get_region("Fluff Levels")
+    spike_levels = world.get_region("Spike Levels")
+    blob_levels = world.get_region("Blob Levels")
+    brick_levels = world.get_region("Brick Levels")
+    fluff_spike_levels = world.get_region("Fluff Spike Levels")
+    fluff_blob_levels = world.get_region("Fluff Blob Levels")
+    fluff_brick_levels = world.get_region("Fluff Brick Levels")
+    spike_blob_levels = world.get_region("Spike Blob Levels")
+    spike_brick_levels = world.get_region("Spike Brick Levels")
+    blob_brick_levels = world.get_region("Blob Brick Levels")
+    fluff_spike_blob_levels = world.get_region("Fluff Spike Blob Levels")
+    fluff_spike_brick_levels = world.get_region("Fluff Spike Brick Levels")
+    fluff_blob_brick_levels = world.get_region("Fluff Blob Brick Levels")
+    spike_blob_brick_levels = world.get_region("Spike Blob Brick Levels")
+    fluff_spike_blob_brick_levels = world.get_region("Fluff Spike Blob Brick Levels")
+    match world.options.victory_condition :
+        case 0 :
+            #percent of levels need to be completed
+            menu.add_event("Completed Level 1", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+
+            fluff_levels.add_event("Completed Level 2", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            fluff_levels.add_event("Completed Level 3", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            fluff_levels.add_event("Completed Level 4", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            fluff_levels.add_event("Completed Level 6", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            fluff_levels.add_event("Completed Level 8", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            fluff_levels.add_event("Completed Level 13", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+
+            spike_levels.add_event("Completed Level 5", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            spike_levels.add_event("Completed Level 7", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            spike_levels.add_event("Completed Level 11", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            spike_levels.add_event("Completed Level 14", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+
+            blob_levels.add_event("Completed Level 15", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            blob_levels.add_event("Completed Level 16", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+
+            brick_levels.add_event("Completed Level 21", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            brick_levels.add_event("Completed Level 23", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+
+            fluff_spike_levels.add_event("Completed Level 9", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            fluff_spike_levels.add_event("Completed Level 10", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            fluff_spike_levels.add_event("Completed Level 12", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+
+            fluff_blob_levels.add_event("Completed Level 17", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            fluff_blob_levels.add_event("Completed Level 19", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+
+            fluff_brick_levels.add_event("Completed Level 24", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+
+            spike_blob_levels.add_event("Completed Level 18", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+
+            blob_brick_levels.add_event("Completed Level 22", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            blob_brick_levels.add_event("Completed Level 25", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            blob_brick_levels.add_event("Completed Level 28", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+
+            fluff_spike_blob_levels.add_event("Completed Level 20", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+
+            fluff_spike_brick_levels.add_event("Completed Level 27", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+
+            fluff_spike_blob_brick_levels.add_event("Completed Level 26", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            fluff_spike_blob_brick_levels.add_event("Completed Level 29", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            fluff_spike_blob_brick_levels.add_event("Completed Level 30", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+        case 1 :
+            #number of key levels need to be completed
+            if "All" in world.options.key_levels_to_beat or len(world.options.key_levels_to_beat.value) == 0:
+                #all key levels are considered valid
+                fluff_spike_blob_levels.add_event("Completed Level 20", "Level Completed",
+                                                  location_type=ChronoRancherLocation,
+                                                  item_type=items.ChronoRancherItem)
+                fluff_spike_blob_brick_levels.add_event("Completed Level 30", "Level Completed",
+                                                  location_type=ChronoRancherLocation,
+                                                  item_type=items.ChronoRancherItem)
+            else :
+                if "Level 20" in world.options.key_levels_to_beat :
+                    fluff_spike_blob_levels.add_event("Completed Level 20", "Level Completed",
+                                                       location_type=ChronoRancherLocation,
+                                                       item_type=items.ChronoRancherItem)
+                if "Level 30" in world.options.key_levels_to_beat :
+                    fluff_spike_blob_brick_levels.add_event("Completed Level 30", "Level Completed",
+                                                       location_type=ChronoRancherLocation,
+                                                       item_type=items.ChronoRancherItem)
+
+

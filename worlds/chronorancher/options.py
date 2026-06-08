@@ -44,7 +44,7 @@ class KeyLevelsToBeat(OptionSet):
     display_name = "Key Levels to Beat"
 
     valid_keys = frozenset({
-        "Level 21",
+        "Level 20",
         "Level 30",
         "All"
     })

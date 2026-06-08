@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING
 
 from BaseClasses import Item, ItemClassification
 
+from . import locations
 if TYPE_CHECKING:
     from .world import ChronoRancherWorld
 
@@ -164,11 +165,24 @@ def create_all_items(world: ChronoRancherWorld) -> None:
         world.create_item("Brick")
     ]
 
-    if world.options.lock_levels:
-        item_ids = ITEM_NAME_TO_ID.values()
+    item_ids = ITEM_NAME_TO_ID.values()
+    if world.options.lock_levels.value == 1 :
         for x in range(99) :
             if x in item_ids :
                 level = "Level " + str(x) + " Unlock"
+                itempool.append(world.create_item(level))
+    elif world.options.lock_levels.value == 2 :
+        for x in world.locations.KEY_LEVELS :
+            level = "Level " + str(x) + " Unlock"
+            itempool.append(world.create_item(level))
+    elif world.options.lock_levels.value == 3 :
+        if "All" in world.options.key_levels_to_beat or len(world.options.key_levels_to_beat.value) == 0:
+            for x in locations.KEY_LEVELS:
+                level = "Level " + str(x) + " Unlock"
+                itempool.append(world.create_item(level))
+        else :
+            for lvl in world.options.key_levels_to_beat.value:
+                level = lvl + " Unlock"
                 itempool.append(world.create_item(level))
 
     if world.options.checks_critter_sanity :

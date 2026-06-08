@@ -66,8 +66,14 @@ def set_all_location_rules(world : ChronoRancherWorld) -> None:
                 unlock = Has(unlock_name)
                 world.set_rule(level, unlock)
                 event_level_name = "Completed Level " + str(i)
-                event_level = world.get_location(event_level_name)
-                world.set_rule(event_level, unlock)
+                key_level_name = "Level " + str(i)
+                if world.options.victory_condition == 0 :
+                    event_level = world.get_location(event_level_name)
+                    world.set_rule(event_level, unlock)
+                #if playing for percent levels, only checks key levels
+                elif key_level_name in world.options.key_levels_to_beat :
+                    event_level = world.get_location(event_level_name)
+                    world.set_rule(event_level, unlock)
     #currently locks all key levels
     elif world.options.lock_levels >= 2 :
         for i in range(1,31) :
@@ -88,5 +94,28 @@ def set_completion_condition(world : ChronoRancherWorld) -> None:
         enough_levels_completed = Has("Level Completed", count=levels_needed)
         world.set_completion_rule(enough_levels_completed)
     else :
+        levels_to_beat = world.options.key_levels_to_beat
+        #if empty, the player will be given the 'All' option
+        if len(levels_to_beat.value) == 0 :
+            levels_to_beat = frozenset("All")
+        key_levels = []
+        if "All" in levels_to_beat :
+            levels = []
+            for lvl in locations.KEY_LEVELS :
+                level_name = "Level " + str(lvl) + " Complete"
+                levels.append(level_name)
+            key_levels = levels
+        else :
+            for lvl in levels_to_beat :
+                level_name = lvl + " Complete"
+                key_levels.append(level_name)
+        num_levels_to_beat = world.options.num_key_levels
+        if num_levels_to_beat == 0 :
+            num_levels_to_beat = len(key_levels)
+        num_levels_to_beat = min(num_levels_to_beat, len(key_levels))
+        #compare the number of levels to beat with the number of levels beaten
+        enough_levels_completed = Has("Level Completed", count=num_levels_to_beat)
+        world.set_completion_rule(enough_levels_completed)
+
         #don't yet have a way to implement the other victory condition
         pass
