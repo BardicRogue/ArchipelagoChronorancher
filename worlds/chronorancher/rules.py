@@ -90,7 +90,7 @@ def set_all_location_rules(world : ChronoRancherWorld) -> None:
 def set_completion_condition(world : ChronoRancherWorld) -> None:
     if world.options.victory_condition == 0 :
         percent_levels_needed = world.options.goal_level_percent
-        levels_needed = math.floor(percent_levels_needed * 30 / 100)
+        levels_needed = math.ceil(percent_levels_needed * 30 / 100)
         enough_levels_completed = Has("Level Completed", count=levels_needed)
         world.set_completion_rule(enough_levels_completed)
     else :

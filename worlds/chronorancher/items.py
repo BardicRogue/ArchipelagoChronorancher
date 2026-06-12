@@ -38,7 +38,7 @@ ITEM_NAME_TO_ID = {
     "Level 23 Unlock": 23,
     "Level 24 Unlock": 24,
     "Level 25 Unlock": 25,
-    #"Level 26 Unlock": 26
+    "Level 26 Unlock": 26,
     "Level 27 Unlock": 27,
     "Level 28 Unlock": 28,
     "Level 29 Unlock": 29,
@@ -52,9 +52,9 @@ ITEM_NAME_TO_ID = {
     "Spike Bestiary": 202,
     "Blob Bestiary": 203,
     "Brick Bestiary": 204,
-    "Congratulatory Critter": 205,
-    "Undo Trap": 300,
-    "Inverted Controls Trap": 301
+    "Congratulatory Critter": 300,
+    "Undo Trap": 400,
+    "Inverted Controls Trap": 401
 }
 
 
@@ -79,7 +79,7 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Level 23 Unlock": ItemClassification.progression,
     "Level 24 Unlock": ItemClassification.progression,
     "Level 25 Unlock": ItemClassification.progression,
-    #"Level 26 Unlock": 26
+    "Level 26 Unlock": ItemClassification.progression,
     "Level 27 Unlock": ItemClassification.progression,
     "Level 28 Unlock": ItemClassification.progression,
     "Level 29 Unlock": ItemClassification.progression,
@@ -88,7 +88,7 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Spike": ItemClassification.progression,
     "Blob": ItemClassification.progression,
     "Brick": ItemClassification.progression,
-    "Chronorancher Bestiary": ItemClassification.filler,
+    "Chrono-Rancher Bestiary": ItemClassification.filler,
     "Fluff Bestiary": ItemClassification.filler,
     "Spike Bestiary": ItemClassification.filler,
     "Blob Bestiary": ItemClassification.filler,

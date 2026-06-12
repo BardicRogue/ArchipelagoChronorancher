@@ -41,11 +41,11 @@ LOCATION_NAME_TO_ID = {
     "Level 28 Complete": 28,
     "Level 29 Complete": 29,
     "Level 30 Complete": 30,
-    "Chrono-Rancher Bestiary": 100,
-    "Fluff Bestiary": 101,
-    "Spike Bestiary": 102,
-    "Blob Bestiary": 103,
-    "Brick Bestiary": 104
+    "Chrono-Rancher Bestiary": 200,
+    "Fluff Bestiary": 201,
+    "Spike Bestiary": 202,
+    "Blob Bestiary": 203,
+    "Brick Bestiary": 204
 }
 
 TUTORIAL_LEVELS = [1,2,3,4,5,6,15,21]
