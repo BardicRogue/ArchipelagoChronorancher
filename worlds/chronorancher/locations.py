@@ -41,15 +41,26 @@ LOCATION_NAME_TO_ID = {
     "Level 28 Complete": 28,
     "Level 29 Complete": 29,
     "Level 30 Complete": 30,
+    "Level 31 Complete": 31,
+    "Level 32 Complete": 32,
+    "Level 33 Complete": 33,
+    "Level 34 Complete": 34,
+    "Level 35 Complete": 35,
+    "Level 36 Complete": 36,
+    "Level 37 Complete": 37,
+    "Level 38 Complete": 38,
+    "Level 39 Complete": 39,
+    "Level 40 Complete": 40,
     "Chrono-Rancher Bestiary": 200,
     "Fluff Bestiary": 201,
     "Spike Bestiary": 202,
     "Blob Bestiary": 203,
-    "Brick Bestiary": 204
+    "Brick Bestiary": 204,
+    "Squeak Bestiary": 205
 }
 
-TUTORIAL_LEVELS = [1,2,3,4,5,6,15,21]
-KEY_LEVELS = [20,30]
+TUTORIAL_LEVELS = [1,2,3,4,5,6,15,21,31]
+KEY_LEVELS = [20,30,40]
 
 class ChronoRancherLocation(Location):
     game: "The Chrono-Rancher"
@@ -163,6 +174,65 @@ def create_regular_locations(world: ChronoRancherWorld) -> None:
     )
     fluff_spike_blob_brick_levels.add_locations(fluff_spike_blob_brick_locations, ChronoRancherLocation)
 
+    #get squeak levels
+    squeak_levels = world.get_region("Squeak Levels")
+    fluff_squeak_levels = world.get_region("Fluff Squeak Levels")
+    spike_squeak_levels = world.get_region("Spike Squeak Levels")
+    blob_squeak_levels = world.get_region("Blob Squeak Levels")
+    brick_squeak_levels = world.get_region("Brick Squeak Levels")
+    fluff_spike_squeak_levels = world.get_region("Fluff Spike Squeak Levels")
+    fluff_blob_squeak_levels = world.get_region("Fluff Blob Squeak Levels")
+    fluff_brick_squeak_levels = world.get_region("Fluff Brick Squeak Levels")
+    spike_blob_squeak_levels = world.get_region("Spike Blob Squeak Levels")
+    spike_brick_squeak_levels = world.get_region("Spike Brick Squeak Levels")
+    blob_brick_squeak_levels = world.get_region("Blob Brick Squeak Levels")
+    fluff_spike_blob_squeak_levels = world.get_region("Fluff Spike Blob Squeak Levels")
+    fluff_spike_brick_squeak_levels = world.get_region("Fluff Spike Brick Squeak Levels")
+    fluff_blob_brick_squeak_levels = world.get_region("Fluff Blob Brick Squeak Levels")
+    spike_blob_brick_squeak_levels = world.get_region("Spike Blob Brick Squeak Levels")
+    fluff_spike_blob_brick_squeak_levels = world.get_region("Fluff Spike Blob Brick Squeak Levels")
+
+    squeak_locations = get_location_names_with_ids(
+        ["Level 31 Complete", "Level 32 Complete", "Level 37 Complete"]
+    )
+    squeak_levels.add_locations(squeak_locations, ChronoRancherLocation)
+
+    fluff_squeak_locations = get_location_names_with_ids(
+        ["Level 36 Complete"]
+    )
+    fluff_squeak_levels.add_locations(fluff_squeak_locations, ChronoRancherLocation)
+
+    spike_squeak_locations = get_location_names_with_ids(
+        ["Level 35 Complete"]
+    )
+    spike_squeak_levels.add_locations(spike_squeak_locations, ChronoRancherLocation)
+
+    blob_squeak_locations = get_location_names_with_ids(
+        ["Level 33 Complete"]
+    )
+    blob_squeak_levels.add_locations(blob_squeak_locations, ChronoRancherLocation)
+
+    brick_squeak_locations = get_location_names_with_ids(
+        ["Level 34 Complete"]
+    )
+    brick_squeak_levels.add_locations(brick_squeak_locations, ChronoRancherLocation)
+
+    fluff_spike_blob_squeak_locations = get_location_names_with_ids(
+        ["Level 38 Complete"]
+    )
+    fluff_spike_blob_squeak_levels.add_locations(fluff_spike_blob_squeak_locations, ChronoRancherLocation)
+
+    fluff_blob_brick_squeak_locations = get_location_names_with_ids(
+        ["Level 39 Complete"]
+    )
+    fluff_blob_brick_squeak_levels.add_locations(fluff_blob_brick_squeak_locations, ChronoRancherLocation)
+
+    fluff_spike_blob_brick_squeak_locations = get_location_names_with_ids(
+        ["Level 40 Complete"]
+    )
+    fluff_spike_blob_brick_squeak_levels.add_locations(fluff_spike_blob_brick_squeak_locations, ChronoRancherLocation)
+
+
     #Add code for if bestiary is enabled
     if world.options.checks_critter_sanity :
         chronorancher_bestiary = get_location_names_with_ids(
@@ -190,6 +260,11 @@ def create_regular_locations(world: ChronoRancherWorld) -> None:
         )
         brick_levels.add_locations(brick_bestiary, ChronoRancherLocation)
 
+        squeak_bestiary = get_location_names_with_ids(
+            ["Squeak Bestiary"]
+        )
+        squeak_levels.add_locations(squeak_bestiary, ChronoRancherLocation)
+
 def create_events(world: ChronoRancherWorld) -> None :
     menu = world.get_region("Menu")
     fluff_levels = world.get_region("Fluff Levels")
@@ -207,6 +282,23 @@ def create_events(world: ChronoRancherWorld) -> None :
     fluff_blob_brick_levels = world.get_region("Fluff Blob Brick Levels")
     spike_blob_brick_levels = world.get_region("Spike Blob Brick Levels")
     fluff_spike_blob_brick_levels = world.get_region("Fluff Spike Blob Brick Levels")
+    squeak_levels = world.get_region("Squeak Levels")
+    fluff_squeak_levels = world.get_region("Fluff Squeak Levels")
+    spike_squeak_levels = world.get_region("Spike Squeak Levels")
+    blob_squeak_levels = world.get_region("Blob Squeak Levels")
+    brick_squeak_levels = world.get_region("Brick Squeak Levels")
+    fluff_spike_squeak_levels = world.get_region("Fluff Spike Squeak Levels")
+    fluff_blob_squeak_levels = world.get_region("Fluff Blob Squeak Levels")
+    fluff_brick_squeak_levels = world.get_region("Fluff Brick Squeak Levels")
+    spike_blob_squeak_levels = world.get_region("Spike Blob Squeak Levels")
+    spike_brick_squeak_levels = world.get_region("Spike Brick Squeak Levels")
+    blob_brick_squeak_levels = world.get_region("Blob Brick Squeak Levels")
+    fluff_spike_blob_squeak_levels = world.get_region("Fluff Spike Blob Squeak Levels")
+    fluff_spike_brick_squeak_levels = world.get_region("Fluff Spike Brick Squeak Levels")
+    fluff_blob_brick_squeak_levels = world.get_region("Fluff Blob Brick Squeak Levels")
+    spike_blob_brick_squeak_levels = world.get_region("Spike Blob Brick Squeak Levels")
+    fluff_spike_blob_brick_squeak_levels = world.get_region("Fluff Spike Blob Brick Squeak Levels")
+
     match world.options.victory_condition :
         case 0 :
             #percent of levels need to be completed
@@ -252,6 +344,20 @@ def create_events(world: ChronoRancherWorld) -> None :
             fluff_spike_blob_brick_levels.add_event("Completed Level 26", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
             fluff_spike_blob_brick_levels.add_event("Completed Level 29", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
             fluff_spike_blob_brick_levels.add_event("Completed Level 30", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+
+            squeak_levels.add_event("Completed Level 31", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            squeak_levels.add_event("Completed Level 32", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            squeak_levels.add_event("Completed Level 37", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+
+            fluff_squeak_levels.add_event("Completed Level 36", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            spike_squeak_levels.add_event("Completed Level 35", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            blob_squeak_levels.add_event("Completed Level 33", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            brick_squeak_levels.add_event("Completed Level 34", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+
+            fluff_spike_blob_squeak_levels.add_event("Completed Level 38", "Level Completed", location_type=ChronoRancherLocation,item_type=items.ChronoRancherItem)
+            fluff_blob_brick_squeak_levels.add_event("Completed Level 39", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+            fluff_spike_blob_brick_squeak_levels.add_event("Completed Level 40", "Level Completed", location_type=ChronoRancherLocation, item_type=items.ChronoRancherItem)
+
         case 1 :
             #number of key levels need to be completed
             if "All" in world.options.key_levels_to_beat or len(world.options.key_levels_to_beat.value) == 0:
@@ -262,6 +368,10 @@ def create_events(world: ChronoRancherWorld) -> None :
                 fluff_spike_blob_brick_levels.add_event("Completed Level 30", "Level Completed",
                                                   location_type=ChronoRancherLocation,
                                                   item_type=items.ChronoRancherItem)
+
+                fluff_spike_blob_brick_squeak_levels.add_event("Completed Level 40", "Level Completed",
+                                                               location_type=ChronoRancherLocation,
+                                                               item_type=items.ChronoRancherItem)
             else :
                 if "Level 20" in world.options.key_levels_to_beat :
                     fluff_spike_blob_levels.add_event("Completed Level 20", "Level Completed",
@@ -271,5 +381,8 @@ def create_events(world: ChronoRancherWorld) -> None :
                     fluff_spike_blob_brick_levels.add_event("Completed Level 30", "Level Completed",
                                                        location_type=ChronoRancherLocation,
                                                        item_type=items.ChronoRancherItem)
-
+                if "Level 40" in world.options.key_levels_to_beat :
+                    fluff_spike_blob_brick_squeak_levels.add_event("Completed Level 40", "Level Completed",
+                                                                   location_type=ChronoRancherLocation,
+                                                                   item_type=items.ChronoRancherItem)
 

@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 #Filler start at 200
 #Traps start at 300
 ITEM_NAME_TO_ID = {
-    #"Level 1 Unlock": 1 #Levels 1-6, 15, 21 are tutorials, so they don't have unlock items
+    #"Level 1 Unlock": 1 #Levels 1-6, 15, 21, 31 are tutorials, so they don't have unlock items
     #"Level 2 Unlock": 2
     #"Level 3 Unlock": 3
     #"Level 4 Unlock": 4
@@ -43,15 +43,27 @@ ITEM_NAME_TO_ID = {
     "Level 28 Unlock": 28,
     "Level 29 Unlock": 29,
     "Level 30 Unlock": 30,
+    #"Level 31 Unlock": 31
+    "Level 32 Unlock": 32,
+    "Level 33 Unlock": 33,
+    "Level 34 Unlock": 34,
+    "Level 35 Unlock": 35,
+    "Level 36 Unlock": 36,
+    "Level 37 Unlock": 37,
+    "Level 38 Unlock": 38,
+    "Level 39 Unlock": 39,
+    "Level 40 Unlock": 40,
     "Fluff": 101,
     "Spike": 102,
     "Blob": 103,
     "Brick": 104,
+    "Squeak" : 105,
     "Chrono-Rancher Bestiary": 200,
     "Fluff Bestiary": 201,
     "Spike Bestiary": 202,
     "Blob Bestiary": 203,
     "Brick Bestiary": 204,
+    "Squeak Bestiary": 205,
     "Congratulatory Critter": 300,
     "Undo Trap": 400,
     "Inverted Controls Trap": 401
@@ -84,15 +96,27 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Level 28 Unlock": ItemClassification.progression,
     "Level 29 Unlock": ItemClassification.progression,
     "Level 30 Unlock": ItemClassification.progression,
+    #"Level 21 Unlock": 21
+    "Level 32 Unlock": ItemClassification.progression,
+    "Level 33 Unlock": ItemClassification.progression,
+    "Level 34 Unlock": ItemClassification.progression,
+    "Level 35 Unlock": ItemClassification.progression,
+    "Level 36 Unlock": ItemClassification.progression,
+    "Level 37 Unlock": ItemClassification.progression,
+    "Level 38 Unlock": ItemClassification.progression,
+    "Level 39 Unlock": ItemClassification.progression,
+    "Level 40 Unlock": ItemClassification.progression,
     "Fluff": ItemClassification.progression,
     "Spike": ItemClassification.progression,
     "Blob": ItemClassification.progression,
     "Brick": ItemClassification.progression,
+    "Squeak": ItemClassification.progression,
     "Chrono-Rancher Bestiary": ItemClassification.filler,
     "Fluff Bestiary": ItemClassification.filler,
     "Spike Bestiary": ItemClassification.filler,
     "Blob Bestiary": ItemClassification.filler,
     "Brick Bestiary": ItemClassification.filler,
+    "Squeak Bestiary": ItemClassification.filler,
     "Congratulatory Critter": ItemClassification.filler,
     "Undo Trap": ItemClassification.trap,
     "Inverted Controls Trap": ItemClassification.trap
@@ -117,21 +141,37 @@ item_name_groups = {
         "Level 23 Unlock",
         "Level 24 Unlock",
         "Level 25 Unlock",
+        "Level 26 Unlock",
         "Level 27 Unlock",
         "Level 28 Unlock",
         "Level 29 Unlock",
-        "Level 30 Unlock"
+        "Level 30 Unlock",
+        "Level 32 Unlock",
+        "Level 33 Unlock",
+        "Level 34 Unlock",
+        "Level 35 Unlock",
+        "Level 36 Unlock",
+        "Level 37 Unlock",
+        "Level 38 Unlock",
+        "Level 39 Unlock",
+        "Level 40 Unlock"
     },
     "Key Level Unlock" : {
         "Level 20 Unlock",
-        "Level 30 Unlock"
+        "Level 30 Unlock",
+        "Level 40 Unlock"
     },
     "Bestiary" : {
         "Chrono-Rancher Bestiary",
         "Fluff Bestiary",
         "Spike Bestiary",
         "Blob Bestiary",
-        "Brick Bestiary"
+        "Brick Bestiary",
+        "Squeak Bestiary"
+    },
+    "Trap" : {
+        "Undo Trap",
+        "Inverted Controls Trap"
     }
 }
 
@@ -143,7 +183,9 @@ class ChronoRancherItem(Item):
 
 def get_random_filler_item_name(world: ChronoRancherWorld) -> str:
     if world.random.randint(0, 99) < world.options.trap_chance:
-        return "Undo Trap"
+        #return a random trap
+        traps = list(item_name_groups["Trap"])
+        return traps[world.random.randint(0, len(traps) - 1)]
     return "Congratulatory Critter"
 
 
@@ -162,7 +204,8 @@ def create_all_items(world: ChronoRancherWorld) -> None:
         world.create_item("Fluff"),
         world.create_item("Spike"),
         world.create_item("Blob"),
-        world.create_item("Brick")
+        world.create_item("Brick"),
+        world.create_item('Squeak')
     ]
 
     item_ids = ITEM_NAME_TO_ID.values()
@@ -191,6 +234,7 @@ def create_all_items(world: ChronoRancherWorld) -> None:
         itempool.append(world.create_item("Spike Bestiary"))
         itempool.append(world.create_item("Blob Bestiary"))
         itempool.append(world.create_item("Brick Bestiary"))
+        itempool.append(world.create_item("Squeak Bestiary"))
 
     num_of_items = len(itempool)
 

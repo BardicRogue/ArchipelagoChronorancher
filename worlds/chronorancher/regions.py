@@ -32,10 +32,28 @@ def create_all_regions(world: ChronoRancherWorld) -> None:
     fluff_blob_brick_levels = Region("Fluff Blob Brick Levels", world.player, world.multiworld)
     spike_blob_brick_levels = Region("Spike Blob Brick Levels", world.player, world.multiworld)
     fluff_spike_blob_brick_levels = Region("Fluff Spike Blob Brick Levels", world.player, world.multiworld)
+    #squeak regions
+    squeak_levels = Region("Squeak Levels", world.player, world.multiworld)
+    fluff_squeak_levels = Region("Fluff Squeak Levels", world.player, world.multiworld)
+    spike_squeak_levels = Region("Spike Squeak Levels", world.player, world.multiworld)
+    blob_squeak_levels = Region("Blob Squeak Levels", world.player, world.multiworld)
+    brick_squeak_levels = Region("Brick Squeak Levels", world.player, world.multiworld)
+    fluff_spike_squeak_levels = Region("Fluff Spike Squeak Levels", world.player, world.multiworld)
+    fluff_blob_squeak_levels = Region("Fluff Blob Squeak Levels", world.player, world.multiworld)
+    fluff_brick_squeak_levels = Region("Fluff Brick Squeak Levels", world.player, world.multiworld)
+    spike_blob_squeak_levels = Region("Spike Blob Squeak Levels", world.player, world.multiworld)
+    spike_brick_squeak_levels = Region("Spike Brick Squeak Levels", world.player, world.multiworld)
+    blob_brick_squeak_levels = Region("Blob Brick Squeak Levels", world.player, world.multiworld)
+    fluff_spike_blob_squeak_levels = Region("Fluff Spike Blob Squeak Levels", world.player, world.multiworld)
+    fluff_spike_brick_squeak_levels = Region("Fluff Spike Brick Squeak Levels", world.player, world.multiworld)
+    fluff_blob_brick_squeak_levels = Region("Fluff Blob Brick Squeak Levels", world.player, world.multiworld)
+    spike_blob_brick_squeak_levels = Region("Spike Blob Brick Squeak Levels", world.player, world.multiworld)
+    fluff_spike_blob_brick_squeak_levels = Region("Fluff Spike Blob Brick Squeak Levels", world.player, world.multiworld)
 
     regions = [menu, fluff_levels, spike_levels, blob_levels, brick_levels, fluff_spike_levels, fluff_blob_levels, fluff_brick_levels, spike_blob_levels, spike_brick_levels, blob_brick_levels, fluff_spike_blob_levels, fluff_spike_brick_levels, fluff_blob_brick_levels, spike_blob_brick_levels, fluff_spike_blob_brick_levels]
-
+    squeak_regions = [squeak_levels, fluff_squeak_levels, spike_squeak_levels, blob_squeak_levels, brick_squeak_levels, fluff_spike_squeak_levels, fluff_blob_squeak_levels, fluff_brick_squeak_levels, spike_blob_squeak_levels, spike_brick_squeak_levels, blob_brick_squeak_levels, fluff_spike_blob_squeak_levels, fluff_spike_brick_squeak_levels, fluff_blob_brick_squeak_levels, spike_blob_brick_squeak_levels, fluff_spike_blob_brick_squeak_levels]
     world.multiworld.regions += regions
+    world.multiworld.regions += squeak_regions
 
 
 def connect_regions(world: ChronoRancherWorld) -> None:
@@ -55,6 +73,23 @@ def connect_regions(world: ChronoRancherWorld) -> None:
     fluff_blob_brick_levels = world.get_region("Fluff Blob Brick Levels")
     spike_blob_brick_levels = world.get_region("Spike Blob Brick Levels")
     fluff_spike_blob_brick_levels = world.get_region("Fluff Spike Blob Brick Levels")
+    #squeak levels
+    squeak_levels = world.get_region("Squeak Levels")
+    fluff_squeak_levels = world.get_region("Fluff Squeak Levels")
+    spike_squeak_levels = world.get_region("Spike Squeak Levels")
+    blob_squeak_levels = world.get_region("Blob Squeak Levels")
+    brick_squeak_levels = world.get_region("Brick Squeak Levels")
+    fluff_spike_squeak_levels = world.get_region("Fluff Spike Squeak Levels")
+    fluff_blob_squeak_levels = world.get_region("Fluff Blob Squeak Levels")
+    fluff_brick_squeak_levels = world.get_region("Fluff Brick Squeak Levels")
+    spike_blob_squeak_levels = world.get_region("Spike Blob Squeak Levels")
+    spike_brick_squeak_levels = world.get_region("Spike Brick Squeak Levels")
+    blob_brick_squeak_levels = world.get_region("Blob Brick Squeak Levels")
+    fluff_spike_blob_squeak_levels = world.get_region("Fluff Spike Blob Squeak Levels")
+    fluff_spike_brick_squeak_levels = world.get_region("Fluff Spike Brick Squeak Levels")
+    fluff_blob_brick_squeak_levels = world.get_region("Fluff Blob Brick Squeak Levels")
+    spike_blob_brick_squeak_levels = world.get_region("Spike Blob Brick Squeak Levels")
+    fluff_spike_blob_brick_squeak_levels = world.get_region("Fluff Spike Blob Brick Squeak Levels")
 
     menu.connect(fluff_levels, "Menu to Fluff")
     menu.connect(spike_levels, "Menu to Spike")
@@ -88,3 +123,20 @@ def connect_regions(world: ChronoRancherWorld) -> None:
     #fluff_spike_brick_levels.connect(fluff_spike_blob_brick_levels, "Fluff Spike Brick to Blob")
     #fluff_blob_brick_levels.connect(fluff_spike_blob_brick_levels, "Fluff Blob Brick to Spike")
     #spike_blob_brick_levels.connect(fluff_spike_blob_brick_levels, "Spike Blob Brick to Fluff")
+    #squeak connections
+    menu.connect(squeak_levels, "Menu to Squeak")
+    fluff_levels.connect(fluff_squeak_levels, "Fluff to Squeak")
+    spike_levels.connect(spike_squeak_levels, "Spike to Squeak")
+    blob_levels.connect(blob_squeak_levels, "Blob to Squeak")
+    brick_levels.connect(brick_squeak_levels, "Brick to Squeak")
+    fluff_spike_levels.connect(fluff_spike_squeak_levels, "Fluff Spike to Squeak")
+    fluff_blob_levels.connect(fluff_blob_squeak_levels, "Fluff Blob to Squeak")
+    fluff_brick_levels.connect(fluff_brick_squeak_levels, "Fluff Brick to Squeak")
+    spike_blob_levels.connect(spike_blob_squeak_levels, "Spike Blob to Squeak")
+    spike_brick_levels.connect(spike_brick_squeak_levels, "Spike Brick to Squeak")
+    blob_brick_levels.connect(blob_brick_squeak_levels, "Blob Brick to Squeak")
+    fluff_spike_blob_levels.connect(fluff_spike_blob_squeak_levels, "Fluff Spike Blob to Squeak")
+    fluff_spike_brick_levels.connect(fluff_spike_brick_squeak_levels, "Fluff Spike Brick to Squeak")
+    fluff_blob_brick_levels.connect(fluff_blob_brick_squeak_levels, "Fluff Blob Brick to Squeak")
+    spike_blob_brick_levels.connect(spike_blob_brick_squeak_levels, "Spike Blob Brick to Squeak")
+    fluff_spike_blob_brick_levels.connect(fluff_spike_blob_brick_squeak_levels, "Fluff Spike Blob Brick to Squeak")

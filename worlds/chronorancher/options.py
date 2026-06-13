@@ -37,7 +37,7 @@ class GoalLevelPercent(NamedRange):
 class KeyLevelsToBeat(OptionSet):
     """
     If **Key Levels** goal is set, select all the levels which are valid levels for you to beat.
-    Possible levels are ["Level 21", "Level 30"]
+    Possible levels are ["Level 20", "Level 30", "Level 40"]
     Can also be set to "All" to include all key levels.
     """
 
@@ -46,12 +46,13 @@ class KeyLevelsToBeat(OptionSet):
     valid_keys = frozenset({
         "Level 20",
         "Level 30",
+        "Level 40",
         "All"
     })
 
     default = frozenset({"All"})
 
-class NumKeyLevels(Range):
+class NumKeyLevels(NamedRange):
     """
     How many of the Key Levels defined above you need to win the game. (0 == All)
     **Only enabled if Key Levels goal is set**
@@ -59,7 +60,7 @@ class NumKeyLevels(Range):
     display_name = "Number of Key Levels to Beat"
 
     range_start = 0
-    range_end = 5#need to figure out how many key levels there are gonna be
+    range_end = 3#need to figure out how many key levels there are gonna be
     default = 0
     special_range_names = {
         "all": 0,
@@ -87,7 +88,7 @@ class ChecksCritterSanity(Toggle):
     """
     Whether bestiary entries on the main menu are checks.
     If enabled, each check requires beating the level which introduces that critter, then clicking on that critter on the main menu.
-    Adds 4* checks.
+    Adds 6* checks.
     """
     display_name = "CritterSanity"
 
